@@ -1,0 +1,62 @@
+import pandas as pd
+df = pd.read_csv("dataset.csv")
+missing_values = df.isnull().sum()
+summary_statistics = df.describe()
+data_dimensions = df.shape
+variable_types = df.dtypes
+lcof = df.ffill()
+ncof = df.bfill()
+
+
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns
+%matplotlib inline
+data = pd.read_csv("tecdiv.csv")
+for index, row in data[""].items():
+    data.loc[index, "Roll no "] = row[-3:]
+data.head()
+sns.boxplot(y=data['Relation'])
+
+
+
+
+
+import pandas as pd
+df = pd.read_csv('Iris.csv')
+grouped = df.groupby('Species')
+mean_values = grouped.mean()
+median_values = grouped.median()
+std_dev_values = grouped.std()
+min_values = grouped.min()
+max_values = grouped.max()
+percentiles = grouped.quantile([0.25, 0.50, 0.75])
+print("Mean Values:")
+print(mean_values)
+print("\nMedian Values:")
+print(median_values)
+print("\nStandard Deviation Values:")
+print(std_dev_values)
+print("\nMinimum Values:")
+print(min_values)
+print("\nMaximum Values:")
+print(max_values)
+print("\nPercentiles:")
+print(percentiles)
+
+
+
+
+
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+df=sns.load_dataset('titanic')
+sns.countplot(x='class')
+sns.histoplot(x='age')
+sns.scatterplot(x='fare',y='age',hue='sex')
+sns.boxplot(y='age')
